@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    <view class="contact">
+      <view class="contact-title">联系方式</view>
+      <view>地址：{{address}}</view>
+      <view>电话：{{phone}}</view>
+    </view>
+  </view>
+
+  <!-- 模板 -->
+  <!-- <template name="msgItem">
+    <view>
+      <view> 姓名：{{cname}}</view>
+      <view> Time: {{ctime}} </view>
+    </view>
+  </template> -->
+
+  <!-- 使用模板 -->
+  <!-- <template is="msgItem" data="{{...item}}"/> -->
+
+  <!-- 循环填充模板数据 -->
+  <!-- <view wx:for="{{actlist}}" wx:for-item="item">
+    <template is="msgItem" data="{{...item}}"/>
+  </view> -->
+</view>

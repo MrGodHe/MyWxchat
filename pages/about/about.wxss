@@ -1,0 +1,24 @@
+/**about.wxss**/
+.contact{line-height: 2;font-size: 12px;text-indent: 2em;}
+.contact-title{margin-top: 60px;}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}

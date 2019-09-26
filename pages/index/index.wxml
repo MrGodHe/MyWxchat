@@ -1,0 +1,37 @@
+<!--index.wxml  -->
+<view class="container">
+  <heartbeat id='heartbeat' wx:if='{{showHeartbeat}}'></heartbeat>
+  <image class="bcg" wx:if='{{bcgImg}}' src="{{bcgImg}} " mode='aspectFill'></image>
+  <!-- 更换背景图片 -->
+  <view wx:if="{{bcgImgAreaShow}}" class='chooseBcg'>
+    <view class="top">
+      <view class="title">更换背景图片</view>
+      <view class="bcgs">
+        <view class='border' wx:for='{{bcgImgList}}' wx:key='{{index}}'>
+          <image src='{{item.src}}' catchtap='chooseBcg' data-index='{{index}}' data-src='{{item.src}}'></image>
+        </view>
+      </view>
+    </view>
+    <view class="close" catchtap='hideBcgImgArea'>
+      <image src='../../image/up-arrow.png'></image>
+    </view>
+  </view>
+
+  <!-- 查询框 -->
+  <view class='search' wx:if='{{!bcgImgAreaShow}}' style='background:rgba(255, 255, 255, 0)'>
+    <view class='wrapper'>
+      <image src='../../image/search.png'></image>
+      <input placeholder-class='placeholderClass' confirm-type='search' placeholder='请输入信息' maxlength='20' bindconfirm='commitSearch' value='{{searchText}}' disabled='{{!enableSearch}}'></input>
+    </view>
+  </view>
+
+  <view class='content' wx:if="{{!bcgImgAreaShow}}" style='margin-top: 60px'>
+    <view class='avatarInfo' catchtap='showBcgImgArea'>换肤</view>
+    <view class="section tc" wx:if="{{!bcgImgAreaShow}}" style='margin-top: 60px'>
+      <video id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+        danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+    </view>
+  </view>
+
+
+</view>
